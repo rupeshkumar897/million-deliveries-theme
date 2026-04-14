@@ -33,3 +33,13 @@ function rupesh_register_hero_meta( $meta_boxes ) {
 
     return $meta_boxes;
 }
+
+function rupesh_task_setup() {
+    // Menu support
+    register_nav_menus( array(
+        'primary-menu' => __( 'Primary Menu', 'rupesh-task' ),
+    ) );
+    // Logo support
+    add_theme_support( 'custom-logo' );
+}
+add_action( 'after_setup_theme', 'rupesh_task_setup' );
