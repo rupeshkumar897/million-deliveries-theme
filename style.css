@@ -1,0 +1,10 @@
+
+@media (max-width: 768px) {
+.frn-box {
+        top: 60px;
+    position: relative;
+    z-index: 99999999;
+    display: block;
+    overflow: visible;
+}
+}
