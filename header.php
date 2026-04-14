@@ -16,7 +16,7 @@
             if ( has_custom_logo() ) {
                 the_custom_logo();
             } else {
-                echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="text-2xl font-bold">' . get_bloginfo( 'name' ) . '</a>';
+                echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="text-2xl font-bold tracking-tighter">' . get_bloginfo( 'name' ) . '</a>';
             }
             ?>
         </div>
@@ -33,10 +33,9 @@
         </nav>
 
         <div class="hidden md:block">
-            <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">
+            <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition shadow-lg">
                 Get Started
             </a>
         </div>
-
     </div>
 </header>
