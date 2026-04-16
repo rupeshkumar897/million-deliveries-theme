@@ -71,7 +71,51 @@ function rupesh_register_all_meta( $meta_boxes ) {
             [ 'name' => 'Card 3 Desc',  'id' => $prefix . 'wcu_c3_d', 'type' => 'textarea' ],
         ],
     ];
-    
+
+    // UPDATED SERVICES SECTION (With Images)
+$meta_boxes[] = [
+    'title'      => 'Our Services Settings',
+    'post_types' => 'page',
+    'fields'     => [
+        [ 'name' => 'Section Title', 'id' => $prefix . 's_title', 'type' => 'text', 'std' => 'Services That Align With Your Needs' ],
+        [ 'name' => 'Section Desc',  'id' => $prefix . 's_desc',  'type' => 'textarea' ],
+        
+        // Service 1
+        [ 'name' => 'S1 Image', 'id' => $prefix . 's1_img', 'type' => 'single_image' ],
+        // Service 2
+        [ 'name' => 'S2 Image', 'id' => $prefix . 's2_img', 'type' => 'single_image' ],
+        // Service 3
+        [ 'name' => 'S3 Image', 'id' => $prefix . 's3_img', 'type' => 'single_image' ],
+    ],
+];
+    // BENTO GRID - COMPREHENSIVE DELIVERY SOLUTIONS
+$meta_boxes[] = [
+    'title'      => 'Bento Grid Settings',
+    'post_types' => 'page',
+    'fields'     => [
+        [ 'name' => 'Main Title', 'id' => $prefix . 'bento_main_title', 'type' => 'text', 'std' => 'Comprehensive Delivery Solutions' ],
+        
+        // Card 1 (Vertical)
+        [ 'name' => 'Card 1 Image', 'id' => $prefix . 'b_img1', 'type' => 'single_image' ],
+        [ 'name' => 'Card 1 Title', 'id' => $prefix . 'b_txt1', 'type' => 'textarea' ],
+
+        // Card 2 (Top Wide)
+        [ 'name' => 'Card 2 Image', 'id' => $prefix . 'b_img2', 'type' => 'single_image' ],
+        [ 'name' => 'Card 2 Title', 'id' => $prefix . 'b_txt2', 'type' => 'textarea' ],
+
+        // Card 3 (Packing)
+        [ 'name' => 'Card 3 Image', 'id' => $prefix . 'b_img3', 'type' => 'single_image' ],
+        [ 'name' => 'Card 3 Title', 'id' => $prefix . 'b_txt3', 'type' => 'textarea' ],
+
+        // Card 4 (Blue Box)
+        [ 'name' => 'Card 4 Blue Box Title', 'id' => $prefix . 'b_txt4', 'type' => 'text' ],
+
+        // Card 5 (Small Bottom Image)
+        [ 'name' => 'Card 5 Image', 'id' => $prefix . 'b_img5', 'type' => 'single_image' ],
+    ],
+];
+
+
     return $meta_boxes;
 }
 
@@ -128,3 +172,70 @@ function rupesh_add_menu_arrow( $title, $item, $args, $depth ) {
     return $title;
 }
 add_filter( 'nav_menu_item_title', 'rupesh_add_menu_arrow', 10, 4 );
+
+
+function rupesh_portfolio_cpt() {
+    register_post_type('portfolio', [
+        'labels'      => ['name' => 'Portfolio', 'singular_name' => 'Portfolio'],
+        'public'      => true,
+        'has_archive' => true,
+        'menu_icon'   => 'dashicons-portfolio',
+        'supports'    => ['title', 'thumbnail', 'editor'],
+        'show_in_rest' => true,
+    ]);
+}
+add_action('init', 'rupesh_portfolio_cpt');
+
+
+
+// Million Settings Page (For Logos, Phone, Email & Form)
+add_action('admin_menu', 'million_settings_page');
+function million_settings_page() {
+    add_menu_page('Million Settings', 'Million Settings', 'manage_options', 'million-settings', 'million_settings_html', 'dashicons-admin-generic', 25);
+}
+
+function million_settings_html() {
+    if (isset($_POST['save_settings'])) {
+        update_option('m_phone', sanitize_text_field($_POST['m_phone']));
+        update_option('m_email', sanitize_text_field($_POST['m_email']));
+        update_option('m_copy', sanitize_text_field($_POST['m_copy']));
+        update_option('m_logos', sanitize_textarea_field($_POST['m_logos']));
+        update_option('m_news_title', sanitize_text_field($_POST['m_news_title']));
+        update_option('m_btn_text', sanitize_text_field($_POST['m_btn_text']));
+        // Social Links Save Logic
+        update_option('m_fb', esc_url_raw($_POST['m_fb']));
+        update_option('m_insta', esc_url_raw($_POST['m_insta']));
+        update_option('m_linkd', esc_url_raw($_POST['m_linkd']));
+        echo '<div class="updated"><p>Settings Saved, Bhai!</p></div>';
+    }
+    $phone = get_option('m_phone', '+1 (888) 645 4661');
+    $email = get_option('m_email', 'info@milliondeliveries.com');
+    $copy = get_option('m_copy', '© 2026 Million Delivery.');
+    $logos = get_option('m_logos', '');
+    $news_title = get_option('m_news_title', 'Subscribe To Our Newsletter');
+    $btn_text = get_option('m_btn_text', 'Submit');
+    $fb    = get_option('m_fb', '#');
+    $insta = get_option('m_insta', '#');
+    $linkd = get_option('m_linkd', '#');
+    ?>
+    <div class="wrap">
+        <h1>Million Delivery - Footer & Form Settings</h1>
+        <form method="post">
+            <table class="form-table">
+                <tr><th>Newsletter Title</th><td><input type="text" name="m_news_title" value="<?php echo $news_title; ?>" class="regular-text"></td></tr>
+                <tr><th>Button Text</th><td><input type="text" name="m_btn_text" value="<?php echo $btn_text; ?>" class="regular-text"></td></tr>
+                <tr><th>Phone</th><td><input type="text" name="m_phone" value="<?php echo $phone; ?>" class="regular-text"></td></tr>
+                <tr><th>Email</th><td><input type="text" name="m_email" value="<?php echo $email; ?>" class="regular-text"></td></tr>
+                <tr><th>Copyright</th><td><input type="text" name="m_copy" value="<?php echo $copy; ?>" class="regular-text"></td></tr>
+                <tr><th>Logos (URLs per line)</th><td><textarea name="m_logos" rows="6" class="large-text"><?php echo $logos; ?></textarea></td></tr>
+                <tr style="background: #f0f0f0;"><th colspan="2"><b>Social Media Links</b></th></tr>
+                <tr><th>Facebook URL</th><td><input type="url" name="m_fb" value="<?php echo $fb; ?>" class="regular-text"></td></tr>
+                <tr><th>Instagram URL</th><td><input type="url" name="m_insta" value="<?php echo $insta; ?>" class="regular-text"></td></tr>
+                <tr><th>LinkedIn URL</th><td><input type="url" name="m_linkd" value="<?php echo $linkd; ?>" class="regular-text"></td></tr>
+            </table>
+            <input type="submit" name="save_settings" class="button button-primary" value="Save Changes">
+        </form>
+    </div>
+    
+<?php } ?>
+

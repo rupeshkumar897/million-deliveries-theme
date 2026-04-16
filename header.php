@@ -4,12 +4,14 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="wp-content/themes/rupesh-task/style.css">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
         /* Million Menu Desktop Styles */
         .million-menu ul { display: flex !important; list-style: none !important; gap: 30px; align-items: center; margin: 0; padding: 0; }
-        .million-menu ul li a { font-size: 13px; font-weight: 700; color: #333; text-transform: uppercase; transition: 0.3s; }
+        .million-menu ul li a { font-size: 13px; font-weight: 700; color: #333; transition: 0.3s; }
         .million-menu ul li a:hover { color: #0052cc; }
 
         /* Mobile Menu List Styling (Exact match to screenshot) */
@@ -131,10 +133,14 @@ $email = get_theme_mod( 'header_email', 'info@milliondeliveries.com' );
             </div>
 
             <div class="hidden lg:flex h-full items-stretch border-l border-gray-100">
-                <a href="#" class="bg-[#0052cc] flex items-center px-8 text-white font-extrabold text-[11px] hover:bg-blue-800 transition uppercase tracking-tighter">
-                    Track Your Order
-                </a>
-            </div>
+    <a href="#" class="flex items-center px-8 text-gray-700 font-extrabold text-[11px] hover:text-[#0052cc] transition  tracking-tighter border-r border-gray-100">
+        Get A Quote <span class="ml-2">↗</span>
+    </a>
+
+    <a href="#" class="bg-[#0052cc] flex items-center px-8 text-white font-extrabold text-[11px] hover:bg-blue-800 transition  tracking-tighter gap-2">
+        Track Your Order <i class="fas fa-location-dot"></i>
+    </a>
+</div>
 
             <div class="lg:hidden px-6">
                 <button @click="mobileOpen = true" class="text-gray-900 focus:outline-none">
