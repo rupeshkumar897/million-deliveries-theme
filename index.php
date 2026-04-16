@@ -10,14 +10,27 @@
     ?>
 
     <section class="relative min-h-[650px] flex items-center bg-black">
-        <div class="absolute inset-0 z-0">
-            <?php if($video_url): ?>
-                <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                    <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
-                </video>
-            <?php endif; ?>
-            <div class="absolute inset-0 bg-black/60 z-10"></div>
-        </div>
+        <?php 
+// MetaBox se Vimeo URL fetch karo
+$video_url = rwmb_meta('task_hero_video'); 
+
+// Link ko 'player' format mein convert karne ka logic (Smart move)
+$embed_url = str_replace('vimeo.com/', 'player.vimeo.com/video/', $video_url);
+$final_url = $embed_url . "?background=1&autoplay=1&loop=1&muted=1&autopause=0";
+?>
+
+<div class="absolute inset-0 z-0 overflow-hidden">
+    <?php if($video_url): ?>
+        <iframe 
+            src="<?php echo esc_url($final_url); ?>" 
+            class="w-full h-full object-cover scale-[1.3]" 
+            frameborder="0" 
+            allow="autoplay; fullscreen" 
+            style="pointer-events: none;">
+        </iframe>
+    <?php endif; ?>
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+</div>
 
         <div class="container mx-auto px-6 lg:px-12 relative z-20">
             <div class="flex flex-col lg:flex-row items-center gap-16">
