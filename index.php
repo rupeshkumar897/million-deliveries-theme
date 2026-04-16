@@ -25,23 +25,23 @@
                     <h1 class="text-4xl md:text-6xl lg:text-7xl mt-10 lg:mt-0 leading-[1.1] tracking-tight">
                         <?php echo esc_html($hero_title); ?>
                     </h1>
-                    <p class="mt-6 text-sm text-gray-200 max-w-xl leading-relaxed">
+                    <p class="mt-6 text-xs text-gray-200 max-w-l leading-relaxed">
                         <?php echo esc_html($hero_desc); ?>
                     </p>
                     <div class="mt-10">
-                        <a href="#" class="bg-[#0052cc] text-white px-10 py-4 uppercase tracking-widest hover:bg-blue-700 transition-all inline-flex items-center gap-2">
+                        <a href="#" class="bg-[#0052cc] text-white px-5 py-2 tracking-widest hover:bg-blue-700 transition-all inline-flex items-center gap-2">
                             Get A Quote <span>↗</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="w-[92%] md:w-[80%] lg:w-[420px] mx-auto lg:mx-0 bg-[#EAEEF0] p-8 lg:p-10 shadow-2xl rounded-sm frn-box relative lg:absolute lg:right-12 lg:bottom-0 lg:translate-y-1/2 z-50 mt-10 lg:mt-0">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6 italic uppercase text-center lg:text-left">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left">
                         Track Your Delivery
                     </h3>
                     <div class="space-y-4">
-                        <input type="text" placeholder="Enter Tracking Number" class="w-full p-4 border border-gray-200 bg-gray-50 focus:outline-none focus:border-[#0052cc] transition shadow-inner">
-                        <button class="w-full bg-[#0052cc] text-white py-4 font-black uppercase italic tracking-widest hover:bg-blue-800 transition shadow-lg flex items-center justify-center gap-2">
+                        <input type="text" placeholder="Enter Tracking Number" class="w-full p-3 border border-gray-200 bg-gray-50 focus:outline-none focus:border-[#0052cc] transition shadow-inner">
+                        <button class="w-full bg-[#0052cc] text-white py-3  tracking-widest hover:bg-blue-800 transition shadow-lg flex items-center justify-center gap-2">
                             Track Your Order <i class="fas fa-location-dot text-sm"></i>
                         </button>
                     </div>
@@ -50,7 +50,7 @@
         </div>
     </section>
 
-   <section class="py-24 pb-96 bg-white relative overflow-hidden">
+   <section class="py-24 h-[5] lg:pb-[20rem] mbh  bg-white relative overflow-hidden">
     <div class="absolute inset-0 z-0 pointer-events-none">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/Vector.png" 
              class="w-full h-full" 
@@ -61,17 +61,17 @@
             <div class="flex flex-col lg:flex-row items-start relative">
                 
                 <div class="w-full lg:w-1/2 relative z-20 pt-4">
-                    <div class="flex items-center gap-2 text-[#0052cc] text-[12px] mb-6 uppercase font-bold tracking-widest">
+                    <div class="flex items-center gap-2 text-[#000] text-[12px] mb-6 uppercase font-bold tracking-widest">
                         <span class="bg-[#0052cc] text-white p-1 rounded-sm flex items-center justify-center">
                             <i class="fas fa-chevron-right text-[7px]"></i>
                         </span> 
                         Why Choose Us
                     </div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-[#0b132a] leading-[1.1] mb-12 max-w-lg">
+                    <h2 class="text-2xl lg:text-5xl text-[#0b132a] leading-[1.1] mb-12 max-w-lg" style="font-weight:600;">
                         Your Trusted Partner in <br> 
                         <span class="text-[#0b132a]">Delivery Excellence</span>
                     </h2>
-                    <a href="#" class="bg-[#0052cc] text-white px-10 py-4 uppercase text-[12px] font-bold inline-flex items-center gap-2 hover:bg-blue-800 transition shadow-lg">
+                    <a href="#" class="bg-[#0052cc] text-white px-5 py-2  text-[12px] font-bold inline-flex items-center gap-2 hover:bg-blue-800 transition shadow-lg">
                         Contact Us <span>↗</span>
                     </a>
                 </div>
@@ -124,10 +124,10 @@
                     </h2>
                 </div>
                 <div class="md:w-1/2 flex flex-col items-start md:items-start" >
-                    <p class="text-gray-500 text-s leading-relaxed mb-4 md:text-left max-w-sm">
+                    <p class="text-gray-500 text-l leading-relaxed mb-4 md:text-left max-w-l">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <a href="#" class="bg-[#0052cc] text-white px-6 py-3 text-[10px] uppercase flex items-center gap-2 hover:bg-blue-800 transition w-full md:w-auto justify-center">
+                    <a href="#" class="bg-[#0052cc] text-white px-5 py-2 text-[10px] flex items-center gap-2 hover:bg-blue-800 transition w-full md:w-auto justify-center">
                         Request A Quote <span class="text-sm">↗</span>
                     </a>
                 </div>
@@ -141,12 +141,12 @@
                     $img_url = !empty($s_img) ? $s_img['url'] : 'https://via.placeholder.com/600x800';
                 ?>
                 <div class="min-w-[82%] md:min-w-full flex-shrink-0 flex flex-col group snap-center">
-                    <div class="relative overflow-hidden h-72 md:h-[450px] rounded-sm">
+                    <div class="relative overflow-hidden h-[14rem] lg:h-72 md:h-[450px] rounded-sm">
                         <img src="<?php echo esc_url($img_url); ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <a href="#" class="flex md:hidden bg-[#0052cc] text-white p-4 justify-between items-center group-hover:bg-blue-800 transition-colors">
-                        <span class="text-lg"><?php echo esc_html($s_title); ?></span>
-                        <span class="text-xl">↗</span>
+                    <a href="#" class="flex md:hidden bg-[#0052cc] text-white p-2 justify-between items-center group-hover:bg-blue-800 transition-colors">
+                        <span class="text-l"><?php echo esc_html($s_title); ?></span>
+                        <span class="text-l">↗</span>
                     </a>
                 </div>
                 <?php endfor; ?>
@@ -156,16 +156,16 @@
 
    
 
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white mbh">
     <div class="container mx-auto px-6 lg:px-12">
         
         <div class="text-center mb-12"> 
-            <div class="flex justify-center items-center gap-2 text-[#0052cc] text-[10px] tracking-widest mb-3 uppercase font-bold">
+            <div class="flex justify-center items-center gap-2 text-[#000] text-[10px] tracking-widest mb-3 uppercase font-bold">
                 <span class="bg-[#0052cc] text-white p-1 rounded-sm flex items-center justify-center">
                     <i class="fas fa-chevron-right text-[7px]"></i>
                 </span> Quick & Reliable
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-[#111]">
+            <h2 class="text-2xl lg:text-4xl font-bold text-[#111]">
                 <?php echo rwmb_meta('task_bento_main_title') ?: 'Comprehensive Delivery Solutions'; ?>
             </h2>
         </div>
@@ -224,7 +224,7 @@ $txt4 = get_post_meta($p_id, $prefix . 'b_txt4', true);
                     <div class="w-32">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/Image-Block.png" class="brightness-0 invert" alt="Logo">
                     </div>
-                    <h3 class="text-white text-3xl font-bold leading-tight"><?php echo esc_html($txt1); ?></h3>
+                    <h3 class="text-white text-1.5xl lg:text-3xl leading-tight"><?php echo esc_html($txt1); ?></h3>
                 </div>
             </div>
 
@@ -235,7 +235,7 @@ $txt4 = get_post_meta($p_id, $prefix . 'b_txt4', true);
                         <img src="<?php echo esc_url($img2); ?>" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     <?php endif; ?>
                     <div class="absolute inset-0 p-10 bg-black/40 flex items-start">
-                        <h3 class="text-white text-2xl font-bold leading-snug max-w-md"><?php echo esc_html($txt2); ?></h3>
+                        <h3 class="text-white text-1.5xl lg:text-3xl leading-snug max-w-md"><?php echo esc_html($txt2); ?></h3>
                     </div>
                 </div>
 
@@ -248,7 +248,7 @@ $txt4 = get_post_meta($p_id, $prefix . 'b_txt4', true);
         
         
         
-        <h3 class="text-black text-xl font-bold leading-tight">
+        <h3 class="text-black text-1.5xl lg:text-3xl leading-tight">
             <?php echo esc_html($txt3); ?>
         </h3>
     </div>
@@ -256,8 +256,8 @@ $txt4 = get_post_meta($p_id, $prefix . 'b_txt4', true);
 
                 <div class="flex flex-col gap-4 h-[340px]">
                     <div class="bg-[#0052cc] flex-1 p-8 flex flex-col items-center justify-center text-center rounded-sm">
-                        <h3 class="text-white text-xl font-bold mb-6"><?php echo esc_html($txt4); ?></h3>
-                        <a href="#" class="bg-white text-[#0052cc] px-6 py-3 text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-gray-100 transition shadow-lg">
+                        <h3 class="text-white text-1.5xl lg:text-3xl mb-6"><?php echo esc_html($txt4); ?></h3>
+                        <a href="#" class="bg-white text-[#0052cc] px-5 py-2 text-[11px]  tracking-widest flex items-center gap-2 hover:bg-gray-100 transition shadow-lg">
                             Request A Quote <span class="text-sm">↗</span>
                         </a>
                     </div>

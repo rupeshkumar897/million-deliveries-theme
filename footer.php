@@ -49,7 +49,7 @@ $m_linkd = get_option('m_linkd', '#');
                     foreach($locations as $loc => $title) : ?>
                         <div class="mobile-accordion border-b border-white/10 md:border-none">
                             <button class="w-full flex justify-between items-center py-4 md:py-0 md:cursor-default group">
-                                <h4 class="text-sm font-bold uppercase md:mb-6 tracking-widest "><?php echo $title; ?></h4>
+                                <h4 class="text-l md:mb-6 tracking-widest "><?php echo $title; ?></h4>
                                 <span class="md:hidden transition-transform duration-300 group-[.is-active]:rotate-180">
                                     <i class="fas fa-chevron-down text-xs opacity-50"></i>
                                 </span>
@@ -65,7 +65,7 @@ $m_linkd = get_option('m_linkd', '#');
                 </div>
 
                 <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
-                    <p class="text-[10px] opacity-30 font-medium order-2 md:order-1"><?php echo esc_html($m_copy); ?></p>
+                    <p class="text-[12px] opacity-30 font-medium order-2 md:order-1"><?php echo esc_html($m_copy); ?></p>
                     <div class="flex gap-6 opacity-40 text-sm order-1 md:order-2">
                         <?php if($m_fb != '#'): ?><a href="<?php echo esc_url($m_fb); ?>" target="_blank" class="hover:opacity-100 transition"><i class="fab fa-facebook-f"></i></a><?php endif; ?>
                         <?php if($m_insta != '#'): ?><a href="<?php echo esc_url($m_insta); ?>" target="_blank" class="hover:opacity-100 transition"><i class="fab fa-instagram"></i></a><?php endif; ?>
@@ -77,7 +77,7 @@ $m_linkd = get_option('m_linkd', '#');
             <div class="lg:col-span-4 relative order-first lg:order-last">
                 <div class="relative lg:absolute lg:-top-20 lg:bottom-0 right-0 w-full bg-[#0052cc] p-6 md:p-5 z-50 flex flex-col justify-center shadow-2xl mb-10 lg:mb-0">
                     <span class="text-[8px] font-bold uppercase tracking-widest opacity-70 mb-1 block ">Stay In Touch</span>
-                    <h2 class="text-xl md:text-2xl font-black  uppercase leading-tight mb-3">Subscribe To Our Newsletter</h2>
+                    <h2 class="text-xl md:text-3xl  leading-tight mb-3">Subscribe To Our Newsletter</h2>
                     
                     <form action="#" method="POST" class="space-y-3 mb-4">
                         <div class="border-b border-white/30 pb-1">

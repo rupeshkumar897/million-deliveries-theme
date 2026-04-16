@@ -11,17 +11,17 @@
     <style>
         /* Million Menu Desktop Styles */
         .million-menu ul { display: flex !important; list-style: none !important; gap: 30px; align-items: center; margin: 0; padding: 0; }
-        .million-menu ul li a { font-size: 13px; font-weight: 700; color: #333; transition: 0.3s; }
+        .million-menu ul li a { font-size: 13px; font-weight: 500; color: #333; transition: 0.3s; }
         .million-menu ul li a:hover { color: #0052cc; }
 
         /* Mobile Menu List Styling (Exact match to screenshot) */
         .mobile-nav-list ul { display: flex !important; flex-direction: column !important; list-style: none !important; padding: 0; }
         .mobile-nav-list ul li { border-bottom: 1px solid #222; width: 100%; }
         .mobile-nav-list ul li a { 
-            font-size: 18px; 
+            font-size: 15px; 
             font-weight: 500; 
             color: #ffffff; 
-            padding: 20px 0; 
+            padding: 15px 0; 
             display: flex; 
             justify-content: space-between; 
             align-items: center;
@@ -33,6 +33,11 @@
 
         .custom-logo-link img { max-height: 40px; width: auto; }
  /* --- Desktop Dropdown - Clean & Premium --- */
+ @media (max-width: 768px) {
+ .mbh {
+    padding-bottom:0!important;
+ }
+}
 @media (min-width: 1280px) {
     /* Main Menu Item */
     .million-menu ul li {
@@ -92,6 +97,18 @@
         color: #0052cc !important;
         padding-left: 30px !important; /* Halka sa right slide effect */
     }
+}   
+
+/* Jo page active hai uska text bold karne ke liye */
+.million-menu ul li.current-menu-item > a {
+    color: #000000 !important; /* Blue color (optional) */
+    font-weight: 800 !important; /* Extra Bold */
+}
+
+/* Agar koi parent page active hai (like sub-menu ke case mein) */
+.million-menu ul li.current-menu-ancestor > a {
+    color: #000000 !important;
+    font-weight: 800 !important;
 }
     </style>
     <?php wp_head(); ?>
@@ -122,7 +139,7 @@ $email = get_theme_mod( 'header_email', 'info@milliondeliveries.com' );
     </div>
 
     <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-[1440px] mx-auto flex justify-between items-center h-20">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center h-[65px]">
             
             <div class="px-6 lg:px-12">
                 <?php the_custom_logo(); ?>
