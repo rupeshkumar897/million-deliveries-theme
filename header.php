@@ -8,6 +8,11 @@
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+  tailwind.config = {
+    
+  }
+</script>
     <style>
         /* Million Menu Desktop Styles */
         .million-menu ul { display: flex !important; list-style: none !important; gap: 30px; align-items: center; margin: 0; padding: 0; }
@@ -52,13 +57,13 @@
         left: 0;
         background: #ffffff;
         min-width: 240px;
-        display: flex !important; /* Flex use karenge vertical list ke liye */
+        display: flex !important; 
         flex-direction: column;
         
         /* Animation Effects */
         visibility: hidden;
         opacity: 0;
-        transform: translateY(15px); /* Niche se upar aane ka effect */
+        transform: translateY(15px); 
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         
         /* Shadow & Border */
@@ -72,7 +77,7 @@
     .million-menu ul li:hover > ul.sub-menu {
         visibility: visible;
         opacity: 1;
-        transform: translateY(0); /* Original position par aayega */
+        transform: translateY(0); 
     }
 
     /* Dropdown Links */
@@ -95,17 +100,17 @@
     .million-menu ul li ul.sub-menu li a:hover {
         background-color: #f8fafc;
         color: #0052cc !important;
-        padding-left: 30px !important; /* Halka sa right slide effect */
+        padding-left: 30px !important;
     }
 }   
 
-/* Jo page active hai uska text bold karne ke liye */
+
 .million-menu ul li.current-menu-item > a {
     color: #000000 !important; /* Blue color (optional) */
     font-weight: 800 !important; /* Extra Bold */
 }
 
-/* Agar koi parent page active hai (like sub-menu ke case mein) */
+
 .million-menu ul li.current-menu-ancestor > a {
     color: #000000 !important;
     font-weight: 800 !important;
@@ -199,25 +204,23 @@ $email = get_theme_mod( 'header_email', 'info@milliondeliveries.com' );
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Sirf un links ko pakdo jinke niche sub-menu hai
+    
     const menuItemsWithChildren = document.querySelectorAll('.mobile-nav-list li.menu-item-has-children');
     
     menuItemsWithChildren.forEach(item => {
         const link = item.querySelector('a');
         
-        // Agar arrow pehle se nahi hai toh add karo
+        
         if (!link.querySelector('i')) {
             link.innerHTML += '<i class="fas fa-chevron-down text-[12px] ml-2 transition-transform"></i>';
         }
         
         link.addEventListener('click', function(e) {
-            // Agar mobile view hai toh dropdown toggle karo
+           
             if (window.innerWidth < 1280) {
-                e.preventDefault(); // Page reload hone se roko
+                e.preventDefault(); 
                 
-                // Baki sab open dropdowns ko band karna hai toh ye line dalo (Optional)
-                // menuItemsWithChildren.forEach(el => { if(el !== item) el.classList.remove('active'); });
-
+                
                 item.classList.toggle('active');
             }
         });

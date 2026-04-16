@@ -156,7 +156,7 @@
 
    
 
-    <section class="py-16 bg-white mbh">
+    <section class="py-10 pb-0 bg-white mbh">
     <div class="container mx-auto px-6 lg:px-12">
         
         <div class="text-center mb-12"> 
@@ -174,24 +174,24 @@ $p_id = get_the_ID();
 $prefix = 'task_';
 
 /**
- * Ekdum Simple Function: Warning proof
+ 
  */
 function get_bento_final_fix($meta_key, $post_id) {
-    // 1. Meta Box se data lo (Directly post meta se)
+  
     $val = get_post_meta($post_id, $meta_key, true);
 
-    // 2. Agar value array hai (Meta Box image_advanced aise hi deta hai)
+    
     if ( is_array($val) && !empty($val) ) {
-        $img_id = $val[0]; // Pehli ID lo
+        $img_id = $val[0]; 
         return wp_get_attachment_url($img_id);
     } 
     
-    // 3. Agar value direct Number/ID hai
+    
     if ( is_numeric($val) && (int)$val > 0 ) {
         return wp_get_attachment_url($val);
     }
 
-    // 4. Agar Meta Box ka special format mil raha hai
+    
     $mb_val = rwmb_meta($meta_key, ['size' => 'full'], $post_id);
     if ( is_array($mb_val) && !empty($mb_val) ) {
         $first = reset($mb_val);
@@ -201,13 +201,13 @@ function get_bento_final_fix($meta_key, $post_id) {
     return '';
 }
 
-// Images Fetch Karo
+
 $img1 = get_bento_final_fix($prefix . 'b_img1', $p_id);
 $img2 = get_bento_final_fix($prefix . 'b_img2', $p_id);
 $img3 = get_bento_final_fix($prefix . 'b_img3', $p_id);
 $img5 = get_bento_final_fix($prefix . 'b_img5', $p_id);
 
-// Text Fetch Karo (Inme array ki problem nahi aati)
+
 $txt1 = get_post_meta($p_id, $prefix . 'b_txt1', true);
 $txt2 = get_post_meta($p_id, $prefix . 'b_txt2', true);
 $txt3 = get_post_meta($p_id, $prefix . 'b_txt3', true);
